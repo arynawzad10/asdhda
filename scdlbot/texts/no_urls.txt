@@ -1,4 +1,6 @@
-*Sorry*, no supported links found in your request.
-Or, if it was YouTube link, YouTube just didn't let me download from it too repeatedly..
-Just wait and try again later, or try my test version bot: @scdltestbot or some another bot like @utubebot.
-For more information see /help
+*ببوورە*، هیچ لینکێکی پشتگیریکراو نەدۆزرایەوە لە داواکاریەکەتدا.
+یان ئەگەر لینکی یوتوب بوو، یوتوب تەنها نەیهێشت زۆر جار دایبەزێنم
+تەنها چاوەڕێبە و دواتر دووبارە هەوڵ بدە،
+یان ئەمە کە👇
+/help
+
