@@ -245,15 +245,15 @@ class ScdlBot:
         flood = self.chat_storage[str(chat_id)]["settings"]["flood"]
         emoji_yes = "✅"
         emoji_no = "❌"
-        button_dl = InlineKeyboardButton(text=" ".join([emoji_yes if mode == "dl" else emoji_no, "Download"]),
+        button_dl = InlineKeyboardButton(text=" ".join([emoji_yes if mode == "dl" else emoji_no, "ڕاستەوخۆ"]),
                                          callback_data=" ".join(["settings", "dl"]))
-        button_link = InlineKeyboardButton(text=" ".join([emoji_yes if mode == "link" else emoji_no, "Links"]),
+        button_link = InlineKeyboardButton(text=" ".join([emoji_yes if mode == "link" else emoji_no, "لینک"]),
                                            callback_data=" ".join(["settings", "link"]))
-        button_ask = InlineKeyboardButton(text=" ".join([emoji_yes if mode == "ask" else emoji_no, "Ask"]),
+        button_ask = InlineKeyboardButton(text=" ".join([emoji_yes if mode == "ask" else emoji_no, "پرسیار"]),
                                           callback_data=" ".join(["settings", "ask"]))
-        button_flood = InlineKeyboardButton(text=" ".join([emoji_yes if flood == "yes" else emoji_no, "Captions"]),
+        button_flood = InlineKeyboardButton(text=" ".join([emoji_yes if flood == "yes" else emoji_no, "ناونیشان"]),
                                             callback_data=" ".join(["settings", "flood"]))
-        button_close = InlineKeyboardButton(text=" ".join([emoji_no, "Close settings"]),
+        button_close = InlineKeyboardButton(text=" ".join([emoji_no, "داخستنی ڕێکخستن"]),
                                             callback_data=" ".join(["settings", "close"]))
         inline_keyboard = InlineKeyboardMarkup([[button_dl, button_link, button_ask], [button_flood, button_close]])
         return inline_keyboard
@@ -336,9 +336,9 @@ class ScdlBot:
                     orig_msg_id = str(reply_to_message_id)
                     self.chat_storage[str(chat_id)][orig_msg_id] = {"message": update.message, "urls": urls,
                                                                     "source_ip": source_ip, "proxy": proxy}
-                    question = "🎶 links found, what to do?"
-                    button_dl = InlineKeyboardButton(text="✅ Download", callback_data=" ".join([orig_msg_id, "dl"]))
-                    button_link = InlineKeyboardButton(text="❇️ Links",
+                    question = "🎶 لینکەکەت دیاری کرا چۆن دایبزێنین?"
+                    button_dl = InlineKeyboardButton(text="✅ ڕاستەوخۆ", callback_data=" ".join([orig_msg_id, "dl"]))
+                    button_link = InlineKeyboardButton(text="❇️ بەلینک ",
                                                        callback_data=" ".join([orig_msg_id, "link"]))
                     button_cancel = InlineKeyboardButton(text="❎", callback_data=" ".join([orig_msg_id, "nodl"]))
                     inline_keyboard = InlineKeyboardMarkup([[button_dl, button_link, button_cancel]])
@@ -379,12 +379,12 @@ class ScdlBot:
                     self.chat_storage[str(chat_id)]["settings"][action] = "no" if current_setting == "yes" else "yes"
                 if setting_changed:
                     self.chat_storage.sync()
-                    update.callback_query.answer(text="Settings changed")
+                    update.callback_query.answer(text="گۆڕا 🔊")
                     update.callback_query.edit_message_reply_markup(parse_mode='Markdown',
                                                                     reply_markup=self.get_settings_inline_keyboard(
                                                                         chat_id))
                 else:
-                    update.callback_query.answer(text="Settings not changed")
+                    update.callback_query.answer(text="هیچ نە گۆڕا 😒")
 
         elif orig_msg_id in self.chat_storage[str(chat_id)]:
             msg_from_storage = self.chat_storage[str(chat_id)].pop(orig_msg_id)
@@ -699,7 +699,7 @@ class ScdlBot:
                             #     url = url.replace("http://", "").replace("https://", "")
                             # else:
                             #     url = shorten_url(url)
-                            caption = "@{} _got it from_ [{}]({}){}".format(self.bot_username.replace("_", "\_"),
+                            caption = "@{} _وەرگیرا لە_ [{}]({}){}".format(self.bot_username.replace("_", "\_"),
                                                                             source, url, addition.replace("_", "\_"))
                             # logger.info(caption)
                         sent_audio_ids = self.send_audio_file_parts(bot, chat_id, file_parts,
