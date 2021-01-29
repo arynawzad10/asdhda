@@ -1,1 +1,1 @@
-*Sorry*, your download was taking too much time (more than {} minutes), so I needed to stop it. You can get direct links and download for yourself with a `/link <links>` command.
+*ببوورە*، داگرتنەکەت کاتی زۆری دەویست (زیاتر لە {} خولەک، بۆیە پێویستبوو بیوەستێنم. دەتوانیت لینکی ڕاستەوخۆ بەدەست بهییت و بە فەرمانی '/link <links> دابگریت.
