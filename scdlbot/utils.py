@@ -138,16 +138,16 @@ def log_and_track(event_name, message=None):
 def get_link_text(urls):
     link_text = ""
     for i, url in enumerate(urls):
-        link_text += "[Source Link #{}]({}) | `{}`\n".format(str(i + 1), url, URL(url).host)
+        link_text += "[سەرچاوە #{}]({}) | `{}`\n".format(str(i + 1), url, URL(url).host)
         direct_urls = urls[url].splitlines()
         for direct_url in direct_urls:
             if "http" in direct_url:
                 content_type = ""
                 if "googlevideo" in direct_url:
                     if "audio" in direct_url:
-                        content_type = "Audio"
+                        content_type = "بە فایلی دەنگی"
                     else:
-                        content_type = "Video"
+                        content_type = "بە ڤیدیۆ"
                 # direct_url = shorten_url(direct_url)
-                link_text += "• {} [Direct Link]({})\n".format(content_type, direct_url)
+                link_text += "• {} [داگرتن]({})\n".format(content_type, direct_url)
     return link_text
